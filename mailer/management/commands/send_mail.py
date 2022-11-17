@@ -11,7 +11,7 @@ class Command(BaseCommand):
         to = options['to']
         subject = options['subject']
         data = options['data']
-        send_mail(to, 'mail/test_mail.html', subject=subject, context={'data': data})
+        send_mail(to, 'mailer/test_mail.html', subject=subject, context={'data': data})
 
     def add_arguments(self, p):
         p.add_argument('-t', '--to', type=str, required=True)
