@@ -1,3 +1,6 @@
+[project]
+name = "mailer"
+python_requires = ">=3.8"
 [build-system]
 requires = ['setuptools>=40.8.0', 'wheel']
 build-backend = 'setuptools.build_meta:__legacy__'
