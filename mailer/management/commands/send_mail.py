@@ -1,3 +1,5 @@
+import json
+
 from django.core.management import BaseCommand
 
 from mailer.core import send_mail
@@ -18,4 +20,4 @@ class Command(BaseCommand):
         p.add_argument('-t', '--to', type=str, required=True)
         p.add_argument('-s', '--subject', type=str, required=True)
         p.add_argument('-p', '--template-path', type=str, required=True)
-        p.add_argument('-c', '--context', type=dict, required=True)
+        p.add_argument('-c', '--context', type=json.loads, required=True)
