@@ -3,6 +3,8 @@ from django.core.mail import EmailMultiAlternatives
 from django.template import TemplateDoesNotExist
 from django.conf import settings
 
+from mailer.models import Message
+
 
 def send_mail(to, template_name, subject, context, **kwargs):
     html_content = render_to_string(template_name, context=context)
@@ -17,3 +19,4 @@ def send_mail(to, template_name, subject, context, **kwargs):
     msg.attach_alternative(html_content, "text/html")
     # you can set any other options on msg here, then...
     msg.send()
+    Message.objects.create(subject=subject)
