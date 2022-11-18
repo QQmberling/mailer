@@ -13,7 +13,7 @@ class Command(BaseCommand):
         to = options['to']
         subject = options['subject']
         context = options['context']
-        template_path = options['template-path']
+        template_path = options['template_path']
         send_mail(to, template_path, subject=subject, context=context)
 
     def add_arguments(self, p):
