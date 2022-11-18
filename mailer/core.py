@@ -19,4 +19,4 @@ def send_mail(to, template_name, subject, context, **kwargs):
     msg.attach_alternative(html_content, "text/html")
     # you can set any other options on msg here, then...
     msg.send()
-    Message.objects.create(subject=subject)
+    Message.objects.create(to=to, subject=subject, context=context)
