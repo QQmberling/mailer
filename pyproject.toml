@@ -12,8 +12,11 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+dependencies = [
+    "django>=4.0",
+    "django-anymail[mailgun]",
+    "requests>=2.4.3"
+]
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
-[tool.setuptools]
-packages = ['mailer']
